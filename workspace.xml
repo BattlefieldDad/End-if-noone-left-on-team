@@ -1,0 +1,155 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable type="Global" id="b*$]6QF^ThSH4ph$LIr`">team1HasPlayers</variable>
+  </variables>
+  <block type="modBlock" deletable="false" x="10" y="10">
+    <statement name="RULES">
+      <block type="ruleBlock">
+        <mutation isOnGoingEvent="true"></mutation>
+        <field name="NAME">makesuregamedoesntendstraightaway</field>
+        <field name="EVENTTYPE">Ongoing</field>
+        <field name="OBJECTTYPE">Global</field>
+        <statement name="CONDITIONS">
+          <block type="conditionBlock">
+            <value name="CONDITION">
+              <block type="GreaterThan">
+                <value name="VALUE-0">
+                  <block type="CountOf">
+                    <value name="VALUE-0">
+                      <block type="FilteredArray">
+                        <value name="VALUE-0">
+                          <block type="AllPlayers"></block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="Equals">
+                            <value name="VALUE-0">
+                              <block type="GetTeamId">
+                                <value name="VALUE-0">
+                                  <block type="Number">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="GetTeamId">
+                                <value name="VALUE-0">
+                                  <block type="CurrentArrayElement"></block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="VALUE-1">
+                  <block type="Number">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ACTIONS">
+          <block type="SetVariable">
+            <value name="VALUE-0">
+              <block type="variableReferenceBlock">
+                <mutation isObjectVar="false"></mutation>
+                <field name="OBJECTTYPE">Global</field>
+                <field name="VAR" id="b*$]6QF^ThSH4ph$LIr`" variabletype="Global">team1HasPlayers</field>
+              </block>
+            </value>
+            <value name="VALUE-1">
+              <block type="Boolean">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="ruleBlock">
+            <mutation isOnGoingEvent="true"></mutation>
+            <field name="NAME">endGameifNooneOnTeam1</field>
+            <field name="EVENTTYPE">Ongoing</field>
+            <field name="OBJECTTYPE">Global</field>
+            <statement name="CONDITIONS">
+              <block type="conditionBlock">
+                <value name="CONDITION">
+                  <block type="And">
+                    <value name="VALUE-0">
+                      <block type="Equals">
+                        <value name="VALUE-0">
+                          <block type="CountOf">
+                            <value name="VALUE-0">
+                              <block type="FilteredArray">
+                                <value name="VALUE-0">
+                                  <block type="AllPlayers"></block>
+                                </value>
+                                <value name="VALUE-1">
+                                  <block type="Equals">
+                                    <value name="VALUE-0">
+                                      <block type="GetTeamId">
+                                        <value name="VALUE-0">
+                                          <block type="Number">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="VALUE-1">
+                                      <block type="GetTeamId">
+                                        <value name="VALUE-0">
+                                          <block type="CurrentArrayElement"></block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="Number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="VALUE-1">
+                      <block type="GetVariable">
+                        <value name="VALUE-0">
+                          <block type="variableReferenceBlock">
+                            <mutation isObjectVar="false"></mutation>
+                            <field name="OBJECTTYPE">Global</field>
+                            <field name="VAR" id="b*$]6QF^ThSH4ph$LIr`" variabletype="Global">team1HasPlayers</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <statement name="ACTIONS">
+              <block type="EndRound">
+                <value name="VALUE-0">
+                  <block type="GetTeamId">
+                    <value name="VALUE-0">
+                      <block type="Number">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
